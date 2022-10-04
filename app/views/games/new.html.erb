@@ -1,0 +1,19 @@
+<h1>New Game</h1>
+<h2>Welcome to the longest word-game!</h2>
+<%# <% raise %>
+
+<% @random_letters.each do |letters| %>
+<span><%= letters %></span>
+<% end %>
+
+
+<form action="/score" method="post" data-turbo="false">
+<label for="question">What is your longest word?</label>
+
+  <div class="input-group mb-3">
+  <input type="text" name="words">
+  <input type="submit" value="play" class="btn btn-primary">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  </div>
+
+</form>
